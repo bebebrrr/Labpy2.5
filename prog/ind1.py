@@ -10,16 +10,15 @@ if __name__ == '__main__':
         exit(1)
     
     count=0
-    for i, _ in enumerate(a):
-        if a[i-1] % 2 != 0 and a[i] % 2 != 0 and a[i] == a[i-1]:
+    p1 = None
+    p2 = None
+    for i, j in zip(a[:-1], a[1:]):
+        if i % 2 != 0 and j % 2 != 0 and i == j:
             count += 1
-            
-
-    for i, _ in enumerate(a):
-        if a[i-1] % 2 != 0 and a[i] % 2 != 0 and a[i] == a[i-1]:
-            p1=i - 1
-            p2=i 
-            break
+            if p1 is None:
+             p1 = a.index(i)
+             p2 = a.index(j, p1+1)
+                
 
     print("Количество нечётных пар: ", count)
     print("Индексы первой нечётной пары: ", p1, p2)   
