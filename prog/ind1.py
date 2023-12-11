@@ -10,13 +10,13 @@ if __name__ == '__main__':
         exit(1)
     
     count=0
-    for i in range(1, len(a) + 1, 2):
-     if a[i-1] % 2 != 0 and a[i] % 2 != 0:
+    for i, _ in enumerate(a):
+     if a[i-1] % 2 != 0 and a[i] % 2 != 0 and a[i] == a[i-1]:
         count += 1
             
 
-    for i in range(1, len(a) + 1, 2):
-        if a[i-1] % 2 != 0 and a[i] % 2 != 0:
+    for i, _ in enumerate(a):
+     if a[i-1] % 2 != 0 and a[i] % 2 != 0 and a[i] == a[i-1]:
             p1=i - 1
             p2=i 
             break
