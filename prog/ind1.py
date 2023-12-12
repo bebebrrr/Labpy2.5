@@ -10,14 +10,14 @@ if __name__ == '__main__':
         exit(1)
     
     count=0
-    p1 = None
-    p2 = None
+    p1 = 0
+    p2 = 0
     for i, j in zip(a[:-1], a[1:]):
         if i % 2 != 0 and j % 2 != 0 and i == j:
             count += 1
-            if p1 is None:
-             p1 = a.index(i)
-             p2 = a.index(j, p1+1)
+            if p1 == 0:
+                p1 = a.index(i)
+                p2 = a.index(j, p1+1)
                 
 
     print("Количество нечётных пар: ", count)
